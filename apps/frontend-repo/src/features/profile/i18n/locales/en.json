@@ -38,6 +38,9 @@
     "cta": {
       "update": {
         "children": "Update"
+      },
+      "logout": {
+        "children": "Log out"
       }
     },
     "divider": {

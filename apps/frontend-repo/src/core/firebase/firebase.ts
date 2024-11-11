@@ -2,15 +2,25 @@
 import { initializeApp } from "firebase/app";
 import { getAuth, connectAuthEmulator } from "firebase/auth";
 import { getFirestore, connectFirestoreEmulator } from "firebase/firestore";
+import { ENVIRONMENTS } from "../environments";
 
+// const firebaseConfig = {
+//   apiKey: "AIzaSyAVuyCMixns5YwU0LS0NqvwRC3gw5B-Mcg",
+//   authDomain: "ebuddy-test-60918.firebaseapp.com",
+//   projectId: "ebuddy-test-60918",
+//   storageBucket: "ebuddy-test-60918.firebasestorage.app",
+//   messagingSenderId: "648478239062",
+//   appId: "1:648478239062:web:fb55a5e2f4702b19844ef7",
+//   measurementId: "G-5TDJEMTNHD",
+// };
 const firebaseConfig = {
-  apiKey: "AIzaSyAVuyCMixns5YwU0LS0NqvwRC3gw5B-Mcg",
-  authDomain: "ebuddy-test-60918.firebaseapp.com",
-  projectId: "ebuddy-test-60918",
-  storageBucket: "ebuddy-test-60918.firebasestorage.app",
-  messagingSenderId: "648478239062",
-  appId: "1:648478239062:web:fb55a5e2f4702b19844ef7",
-  measurementId: "G-5TDJEMTNHD",
+  apiKey: ENVIRONMENTS.FIREBASE_API_KEY,
+  authDomain: ENVIRONMENTS.FIREBASE_AUTH_DOMAIN,
+  projectId: ENVIRONMENTS.FIREBASE_PROJECT_ID,
+  storageBucket: ENVIRONMENTS.FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: ENVIRONMENTS.FIREBASE_MESSAGING_SENDER_ID,
+  appId: ENVIRONMENTS.FIREBASE_APP_ID,
+  measurementId: ENVIRONMENTS.FIREBASE_MEASUREMENT_ID,
 };
 
 // Initialize Firebase

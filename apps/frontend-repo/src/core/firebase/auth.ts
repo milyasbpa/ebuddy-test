@@ -44,12 +44,7 @@ export const googleSignIn = async (): Promise<User | null | undefined> => {
   const provider = new GoogleAuthProvider();
   try {
     const result = await signInWithPopup(auth, provider);
-    // await auth.fire.collection('users').doc(uid).set({
-    //     uid,
-    //     email,
-    //     displayName,
-    //     createdAt: admin.firestore.FieldValue.serverTimestamp(),
-    //   });
+
     return result.user;
   } catch (error: unknown) {
     if (error instanceof Error) {
@@ -62,14 +57,12 @@ export const googleSignIn = async (): Promise<User | null | undefined> => {
 };
 
 export const signOut = async (): Promise<void> => {
-  try {
-    await auth.signOut();
-  } catch (error) {
-    if (error instanceof Error) {
-      console.error("Error signing up:", error.message);
-      throw error; // Rethrow after logging
-    } else {
-      console.error("Unknown error signing up");
-    }
-  }
+  return await auth
+    .signOut()
+    .then((res) => {
+      return res;
+    })
+    .catch((err) => {
+      return err;
+    });
 };

@@ -12,9 +12,8 @@ import {
   TextField,
   Typography,
 } from "@mui/material";
-import { Google } from "@/core/app/ui/icons/google";
 import { useRouter } from "next/navigation";
-import { profileUpdateUser } from "../../redux";
+import { profileLogout, profileUpdateUser } from "../../redux";
 
 export const FormProfile = () => {
   const router = useRouter();
@@ -46,6 +45,12 @@ export const FormProfile = () => {
         display_name: state.form.display_name.value,
       })
     );
+  };
+
+  const handleLogout = async (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.preventDefault();
+    const logoutResponseResult = await dispatch(profileLogout());
+    router.push("/");
   };
 
   return (
@@ -109,6 +114,9 @@ export const FormProfile = () => {
 
         <Button fullWidth variant="contained" onClick={handleUpdateProfile}>
           {dictionaries.form.cta.update.children}
+        </Button>
+        <Button fullWidth variant="contained" onClick={handleLogout}>
+          {dictionaries.form.cta.logout.children}
         </Button>
       </Box>
     </CardProfile>

@@ -1,5 +1,6 @@
 import { GetUserSuccessResponseInterface } from "@/core/api/models/user";
 import { fetchGetUser, fetchPutUser } from "@/core/api/services/user";
+import { signOut } from "@/core/firebase";
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { User } from "firebase/auth";
 
@@ -30,6 +31,19 @@ export const profileUpdateUser = createAsyncThunk(
       },
     })
       .then((res: GetUserSuccessResponseInterface) => {
+        return res;
+      })
+      .catch((err) => {
+        throw err;
+      });
+  }
+);
+
+export const profileLogout = createAsyncThunk(
+  "profile/logout",
+  async (_, { rejectWithValue }) => {
+    return await signOut()
+      .then((res) => {
         return res;
       })
       .catch((err) => {
