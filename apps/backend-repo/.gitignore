@@ -2,3 +2,4 @@ node_modules/
 dist/
 ui-debug.log
 src/core/lib/ebuddy.json
+firebase-debug.log
