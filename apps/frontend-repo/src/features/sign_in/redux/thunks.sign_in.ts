@@ -28,11 +28,20 @@ export const signInWithEmailPassword = createAsyncThunk(
 export const signInWithGoogle = createAsyncThunk(
   "sign_in/google",
   async (_, { rejectWithValue }) => {
-    try {
-      const user: User | null | undefined = await googleSignIn();
-    } catch (error: any) {
-      return rejectWithValue(error.message);
-    }
+    return await googleSignIn()
+      .then((res) => {
+        console.log((res as any).accessToken, "ini res");
+        return res;
+      })
+      .catch((err) => {
+        const message = err.message ?? "";
+        return rejectWithValue(message);
+      });
+    // try {
+    //   const user: User | null | undefined = await googleSignIn();
+    // } catch (error: any) {
+    //   return rejectWithValue(error.message);
+    // }
   }
 );
 

@@ -7,10 +7,15 @@ export const fetchPutUser = async (
   payload?: PutUpdateUserPayloadRequestInterface
 ) => {
   try {
-    const url = `${
-      process.env.NEXT_PUBLIC_BACKEND_API_URL
-    }${APICollectionURL.user.putUser()}`;
-    console.log(url, "ini url");
+    // const url = `${
+    //   process.env.NEXT_PUBLIC_BACKEND_API_URL
+    // }${APICollectionURL.user.putUser()}`;
+    const url =
+      process.env.NEXT_PUBLIC_ENVIRONMENT === "development"
+        ? `${
+            process.env.NEXT_PUBLIC_BACKEND_API_URL
+          }${APICollectionURL.user.putUser()}`
+        : `${"http://localhost:5001"}${APICollectionURL.user.putUser()}`;
 
     const cookies = new Cookies();
     const token = cookies.get("token");
