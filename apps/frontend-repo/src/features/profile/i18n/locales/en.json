@@ -1,0 +1,47 @@
+{
+  "title": "Profile",
+  "notification": {
+    "items": [
+      {
+        "id": "FAILED_UPDATE_PROFILE",
+        "message": "Profile failed to update"
+      },
+      {
+        "id": "SUCCESS_UPDATE_PROFILE",
+        "message": "Profile has been updated"
+      }
+    ]
+  },
+  "form": {
+    "email": {
+      "id": "email",
+      "type": "email",
+      "name": "email",
+      "label": "Email",
+      "placeholder": "your@email.com",
+      "regex": "\\S+@\\S+\\.\\S+",
+      "errors": [
+        {
+          "id": "valid_email",
+          "name": "INVALID_EMAIL",
+          "message": "Email is not Valid"
+        }
+      ]
+    },
+    "display_name": {
+      "id": "display_name",
+      "name": "display_name",
+      "label": "Display Name",
+      "type": "text",
+      "placeholder": "Display Name"
+    },
+    "cta": {
+      "update": {
+        "children": "Update"
+      }
+    },
+    "divider": {
+      "label": "or"
+    }
+  }
+}

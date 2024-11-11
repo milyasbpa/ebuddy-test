@@ -1,0 +1,56 @@
+{
+  "title": "Sign Up",
+  "notification": {
+    "items": [
+      {
+        "id": "FAILED_SIGN_UP",
+        "message": "Login failed, credentials is not correct"
+      },
+      {
+        "id": "SUCCESS_SIGN_UP",
+        "message": "SignInSuccess"
+      }
+    ]
+  },
+  "form": {
+    "email": {
+      "id": "email",
+      "type": "email",
+      "name": "email",
+      "label": "Email",
+      "placeholder": "your@email.com",
+      "regex": "\\S+@\\S+\\.\\S+",
+      "errors": [
+        {
+          "id": "invalid_email",
+          "message": "Email is not Valid"
+        }
+      ]
+    },
+    "password": {
+      "id": "password",
+      "name": "password",
+      "placehoolder": "••••••",
+      "label": "Password",
+      "type": "password",
+      "placeholder": "Password",
+      "errors": [
+        {
+          "id": "invalid_password",
+          "message": "Password is not valid"
+        }
+      ]
+    },
+    "cta": {
+      "sign_up": {
+        "children": "Sign Up"
+      },
+      "sign_up_with_google": {
+        "children": "Sign Up with Google"
+      }
+    },
+    "divider": {
+      "label": "or"
+    }
+  }
+}

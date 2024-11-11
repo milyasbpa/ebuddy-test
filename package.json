@@ -1,0 +1,19 @@
+{
+  "name": "ebuddy-turborepo",
+  "private": true,
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "packageManager": "npm@8.0.0",
+  "scripts": {
+    "dev": "turbo run dev --parallel",
+    "build": "turbo run build --filter=...",
+    "dev:frontend": "cd apps/frontend-repo && next dev",
+    "dev:backend": "cd apps/backend-repo && nodemon src/index.ts"
+  },
+  "devDependencies": {
+    "turbo": "latest",
+    "typescript": "^5.0.0"
+  }
+}

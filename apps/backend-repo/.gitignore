@@ -1,0 +1,4 @@
+node_modules/
+dist/
+ui-debug.log
+src/core/lib/ebuddy.json

@@ -1,0 +1,58 @@
+{
+  "title": "Sign In",
+  "notification": {
+    "items": [
+      {
+        "id": "FAILED_SIGN_IN",
+        "message": "Login failed, credentials is not correct"
+      },
+      {
+        "id": "SUCCESS_SIGN_IN",
+        "message": "SignInSuccess"
+      }
+    ]
+  },
+  "form": {
+    "email": {
+      "id": "email",
+      "type": "email",
+      "name": "email",
+      "label": "Email",
+      "placeholder": "your@email.com",
+      "regex": "\\S+@\\S+\\.\\S+",
+      "errors": [
+        {
+          "id": "valid_email",
+          "name": "INVALID_EMAIL",
+          "message": "Email is not Valid"
+        }
+      ]
+    },
+    "password": {
+      "id": "password",
+      "name": "password",
+      "placehoolder": "••••••",
+      "label": "Password",
+      "type": "password",
+      "placeholder": "Password",
+      "errors": [
+        {
+          "id": "valid_password",
+          "name": "INVALID_PASSWORD",
+          "message": "Password is not valid"
+        }
+      ]
+    },
+    "cta": {
+      "sign_in": {
+        "children": "Sign In"
+      },
+      "sign_in_with_google": {
+        "children": "Sign In with Google"
+      }
+    },
+    "divider": {
+      "label": "or"
+    }
+  }
+}
