@@ -36,10 +36,6 @@ export const authMiddleware = async (
         req.user = decodedToken as DecodedIdToken;
         next();
       }
-      // const decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
-      // req.user = decodedToken;
-      // console.log(decodedToken,'ini decoded token')
-      // next();
     } catch (error) {
       res.status(403).json({ message: "Forbidden", error: "User not found" });
       return;
