@@ -6,7 +6,8 @@
     "dev": "next dev -p 3009",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "emulator": "firebase emulators:start --only firestore,auth"
   },
   "dependencies": {
     "@ebuddy-turborepo/package": "*",

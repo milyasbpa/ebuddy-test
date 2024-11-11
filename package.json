@@ -10,7 +10,8 @@
     "dev": "turbo run dev --parallel",
     "build": "turbo run build --filter=...",
     "dev:frontend": "cd apps/frontend-repo && next dev",
-    "dev:backend": "cd apps/backend-repo && nodemon src/index.ts"
+    "dev:backend": "cd apps/backend-repo && nodemon src/index.ts",
+    "emulator": "firebase emulators:start --only firestore,auth"
   },
   "devDependencies": {
     "turbo": "latest",
