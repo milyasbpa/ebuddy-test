@@ -8,7 +8,6 @@ export const profileGetUser = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     return await fetchGetUser()
       .then((res: GetUserSuccessResponseInterface) => {
-        console.log(res, "ini email");
         return res;
       })
       .catch((err) => {
@@ -27,11 +26,10 @@ export const profileUpdateUser = createAsyncThunk(
       body: {
         email: email,
         display_name:
-          (!display_name || !display_name.length) ? undefined : display_name,
+          !display_name || !display_name.length ? undefined : display_name,
       },
     })
       .then((res: GetUserSuccessResponseInterface) => {
-        console.log(res, "ini email");
         return res;
       })
       .catch((err) => {

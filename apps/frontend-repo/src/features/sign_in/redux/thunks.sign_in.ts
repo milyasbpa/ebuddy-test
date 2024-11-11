@@ -39,7 +39,6 @@ export const signInWithGoogle = createAsyncThunk(
 export const updateUser = createAsyncThunk(
   "sign_in/update_user",
   async ({ email }: { email: string }, { rejectWithValue }) => {
-    console.log(email, "ini email");
     return await fetchPutUser({
       body: {
         email: email,

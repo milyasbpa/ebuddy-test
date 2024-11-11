@@ -3,3 +3,4 @@ dist/
 ui-debug.log
 src/core/lib/ebuddy.json
 firebase-debug.log
+firestore-debug.log
