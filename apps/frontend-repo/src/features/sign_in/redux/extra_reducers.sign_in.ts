@@ -16,7 +16,8 @@ export const extraReducers = (builder: any) => {
       signInWithEmailPassword.fulfilled,
       (state: SignInState, action: PayloadAction<{ email: string }>) => {
         state.loading = false;
-        state.user = action.payload;
+        console.log(action.payload.email, "ini payload");
+        // state.user = action.payload;
         state.notification.is_open = true;
         state.notification.code = "SUCCESS_SIGN_IN";
         state.notification.severity = "success";

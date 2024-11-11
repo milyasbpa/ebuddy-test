@@ -4,10 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/main.js",
+    "build": "rm -rf dist && tsc",
+    "start": "FIREBASE_AUTH_EMULATOR_HOST=localhost:9099,PORT=3001,ENVIRONMENT=development,FIREBASE_EMULATOR_HOST=localhost:8080 node dist/apps/backend-repo/src/main.js",
     "dev": "nodemon src/main.ts",
-    "serve": "firebase emulators:start --only functions",
+    "serve": "firebase emulators:start --only firestore",
     "test": "jest"
   },
   "jest": {

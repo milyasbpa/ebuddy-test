@@ -7,6 +7,12 @@ export const store = configureStore({
   reducer: {
     auth: authReducer,
   },
+  // middleware: (getDefaultMiddleware) =>
+  //   getDefaultMiddleware({
+  //     serializableCheck: {
+  //       ignoredActions: ["sign_in/google/fulfilled"],
+  //     },
+  //   }),
 });
 
 export type RootState = ReturnType<typeof store.getState>;

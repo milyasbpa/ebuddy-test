@@ -30,8 +30,8 @@ export const signInWithGoogle = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     return await googleSignIn()
       .then((res) => {
-        console.log((res as any).accessToken, "ini res");
-        return res;
+        console.log((res as any).accessToken, res?.email, "ini res");
+        return { email: res?.email ?? "" };
       })
       .catch((err) => {
         const message = err.message ?? "";

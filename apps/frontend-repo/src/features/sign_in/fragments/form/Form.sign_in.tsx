@@ -80,9 +80,10 @@ export const FormSignIn = () => {
     e.preventDefault();
     const signInWithGoogleResponse = await dispatch(signInWithGoogle());
     if (signInWithGoogle.fulfilled.match(signInWithGoogleResponse)) {
+      console.log(signInWithGoogleResponse, state.user?.email, "ini apasih");
       const updateUserResponse = await dispatch(
         updateUser({
-          email: state.form.email.value,
+          email: signInWithGoogleResponse.payload.email ?? "",
         })
       );
       if (updateUser.fulfilled.match(updateUserResponse)) {

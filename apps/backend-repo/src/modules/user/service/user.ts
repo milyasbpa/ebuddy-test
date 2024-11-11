@@ -25,8 +25,8 @@ export class UserService {
         user_id: userId,
         email,
         display_name: display_name ?? "",
-        lastLogin: firebaseAdmin.firestore.FieldValue.serverTimestamp(),
-        createdAt: firebaseAdmin.firestore.FieldValue.serverTimestamp(),
+        lastLogin: new Date().toISOString(),
+        createdAt: new Date().toISOString(),
       };
       await userDocRef.set(payload);
       return { created: true };

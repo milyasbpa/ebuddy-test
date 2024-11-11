@@ -11,13 +11,9 @@ if (!adminApps.length) {
   });
 }
 
-// Connect to Firestore Emulator if running locally
-if (process.env.FIRESTORE_EMULATOR_HOST) {
-  const firestore = admin.firestore();
-  firestore.settings({
-    host: process.env.FIRESTORE_EMULATOR_HOST,
-    ssl: false, // Disable SSL when connecting to the emulator
-  });
+if (process.env.ENVIRONMENT === "development") {
+  process.env.FIRESTORE_EMULATOR_HOST = "localhost:8080";
+  process.env.FIREBASE_AUTH_EMULATOR_HOST = "localhost:9099";
 }
 
 export const firestore = admin.firestore();
