@@ -1,6 +1,7 @@
 # Step to Run
 
 1. Clone the repo
+
 2. Copy frontend env files into frontend-repo folder and copy backend env files into backend-repo folder (environment sent on email).
 PS: don't forget to rename these files 
 .env.backend -> .env 
@@ -11,9 +12,11 @@ PS: don't forget to rename these files
 - apps/frontend-repo
 - packages
 - also on the root folder
-3. Run frontend project by 
+
+4. Run frontend project by 
 - npm run dev and it will be served at port 3009
-4. Run backend project by 
+
+5. Run backend project by 
 - npm run dev and it will be served at port 3001
 If you want to act as frontend and build the backend you can run
 - npm run build
