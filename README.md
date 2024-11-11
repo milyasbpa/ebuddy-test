@@ -1,7 +1,11 @@
 # Step to Run
 
 1. Clone the repo
-2. Copy frontend env files into frontend-repo folder and copy backend env files into backend-repo folder
+2. Copy frontend env files into frontend-repo folder and copy backend env files into backend-repo folder (environment sent on email).
+PS: don't forget to rename these files 
+.env.backend -> .env 
+.env.frontend -> .env
+
 3. Run npm install on 
 - apps/backend-repo
 - apps/frontend-repo
