@@ -1,4 +1,4 @@
-#Step to Run
+# Step to Run
 
 1. Clone the repo
 2. Copy frontend env files into frontend-repo folder and copy backend env files into backend-repo folder
