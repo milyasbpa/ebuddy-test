@@ -30,18 +30,12 @@ export const signInWithGoogle = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     return await googleSignIn()
       .then((res) => {
-        console.log((res as any).accessToken, res?.email, "ini res");
         return { email: res?.email ?? "" };
       })
       .catch((err) => {
         const message = err.message ?? "";
         return rejectWithValue(message);
       });
-    // try {
-    //   const user: User | null | undefined = await googleSignIn();
-    // } catch (error: any) {
-    //   return rejectWithValue(error.message);
-    // }
   }
 );
 

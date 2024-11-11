@@ -25,26 +25,15 @@ export const authMiddleware = async (
 
   const token = authorization.split(" ")[1];
 
-  console.log(process.env.ENVIRONMENT, "ini token");
   if (token) {
     try {
       if (process.env.ENVIRONMENT !== "development") {
-        console.log("ini kepanggil ga");
         const decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
         req.user = decodedToken;
         next();
       } else {
-        console.log("ini kepanggil ga bawah");
         const decodedToken = jwt.decode(token);
-        // const user = await firebaseAdmin
-        //   .auth()
-        //   .getUserByEmail("user@example.com");
-        // const token = await firebaseAdmin.auth().createCustomToken("aksodkas");
-        // console.log("Firebase ID Token:", token);
-        // const decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
-
         req.user = decodedToken as DecodedIdToken;
-        console.log(decodedToken, "ini decoded token");
         next();
       }
       // const decodedToken = await firebaseAdmin.auth().verifyIdToken(token);
