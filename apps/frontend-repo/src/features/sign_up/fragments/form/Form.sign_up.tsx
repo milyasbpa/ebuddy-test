@@ -111,7 +111,7 @@ export const FormSignUp = () => {
     if (signInWithGoogle.fulfilled.match(signInWithGoogleResponse)) {
       const updateUserResponse = await dispatch(
         updateUser({
-          email: state.form.email.value,
+          email: state.user?.email ?? "",
         })
       );
       if (updateUser.fulfilled.match(updateUserResponse)) {
@@ -202,7 +202,6 @@ export const FormSignUp = () => {
           fullWidth
           variant="outlined"
           onClick={handleSignInWithGoogle}
-          startIcon={<Google style={{ width: 16, height: 16 }} />}
         >
           <Box display="flex" gap={1} alignItems={"center"}>
             {state.loading && <CircularProgress size={16} />}

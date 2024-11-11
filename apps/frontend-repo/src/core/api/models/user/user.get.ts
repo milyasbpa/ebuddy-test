@@ -11,9 +11,9 @@ export interface GetUserSuccessResponseInterface {
   response_status: string;
   message: string;
   data: {
-    createdAt: { _seconds: number; _nanoseconds: number };
+    created_at: string;
     email: string;
-    lastLogin: { _seconds: number; _nanoseconds: number };
+    last_login: string;
     user_id: string;
     display_name: string;
   };
