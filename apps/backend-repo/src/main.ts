@@ -1,9 +1,10 @@
 import "dotenv/config";
-import { api } from "./core/application/api";
+import { app } from "./core/application/api";
 import { logger } from "./core/application/logging";
-import path from "path";
+import * as functions from "firebase-functions";
 
 const PORT = process.env.PORT || 3000;
-api.listen(PORT, () => {
+app.listen(PORT, () => {
   logger.info(`Listening on port ${PORT}`);
 });
+export const api = functions.https.onRequest(app);

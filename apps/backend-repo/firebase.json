@@ -7,7 +7,8 @@
       "port": 9099
     },
     "functions": {
-      "port": 5001
+      "port": 5001,
+      "source": "dist/apps/backend-repo/src"
     },
     "ui": {
       "enabled": true
@@ -16,7 +17,7 @@
   },
   "functions": [
     {
-      "source": "functions",
+      "source": "dist/apps/backend-repo/src",
       "codebase": "default",
       "ignore": [
         "node_modules",
